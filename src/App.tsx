@@ -1,5 +1,9 @@
-export function App(){
-  return(
-    <h1>hello world</h1>
-  )
+import { Header } from "./components/Header";
+
+export function App() {
+  return (
+    <article>
+      <Header />
+    </article>
+  );
 }
