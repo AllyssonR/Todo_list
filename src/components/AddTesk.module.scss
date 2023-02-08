@@ -1,0 +1,29 @@
+.addTesk {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  input {
+    padding: 1rem;
+    width: 39.8rem;
+    height: 3.3rem;
+    border: 1px solid #0d0d0d;
+    background: var(--gray-500);
+    border-radius: 8px;
+  }
+}
+.addButton {
+  color: white;
+  height: 3.25rem;
+  width: 5.6rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--blue-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  &:hover {
+    background-color: var(--blue);
+  }
+}
