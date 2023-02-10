@@ -1,0 +1,21 @@
+
+.tableTask {
+  max-width: 736px;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.headerTable {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h1 {
+    font-weight: 700;
+    font-size: 0.8rem;
+  }
+}
+.createdTask {
+}
+.completedTask {
+}
