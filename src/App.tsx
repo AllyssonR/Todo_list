@@ -1,6 +1,6 @@
 import { Header } from "./components/Header";
 import styles from "./App.module.scss";
-import { NoTask } from "./components/NoTask";
+import { Task } from "./components/Task";
 export function App() {
   return (
     <article className={styles.mainPage}>
@@ -15,9 +15,9 @@ export function App() {
           </h1>
         </div>
       </div>
-      <div>
-        <NoTask />
-      </div>
+      <ul className={styles.taskList}>
+        <Task />
+      </ul>
     </article>
   );
 }

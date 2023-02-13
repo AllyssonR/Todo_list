@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 4rem;
   span {
     color: var(--gray-100);
     background-color: var(--gray-400);
@@ -20,6 +21,7 @@
   width: 738px;
   align-items: center;
   justify-content: space-between;
+  margin-top: 4rem;
 
   h1 {
     font-weight: 700;
@@ -31,4 +33,9 @@
 }
 .completedTask {
   color: var(--purple);
+}
+.taskList{
+  li{
+    margin-top: 1rem;
+  }
 }
