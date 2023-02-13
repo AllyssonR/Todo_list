@@ -1,6 +1,13 @@
 import { Header } from "./components/Header";
 import styles from "./App.module.scss";
 import { Task } from "./components/Task";
+const tasks = [
+  { isDone: true, task: "limpar o Quarto" },
+  { isDone: false, task: "limpar a casa" },
+  { isDone: true, task: "fazer o café" },
+  { isDone: false, task: "regar as plantas" },
+  { isDone: false, task: "consertar o telhado" },
+];
 export function App() {
   return (
     <article className={styles.mainPage}>
