@@ -3,7 +3,7 @@ import styles from "./Task.module.scss";
 export function Task() {
   return (
     <li className={styles.content}>
-      <input type="checkbox" name="isTashDone" id="isTaskDone" />
+      <input type="radio" name="isTashDone" id="isTaskDone" />
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam
         voluptatum sed nemo aspernatur deleniti soluta maiores architecto
