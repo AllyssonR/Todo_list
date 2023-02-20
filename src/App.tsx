@@ -2,11 +2,11 @@ import { Header } from "./components/Header";
 import styles from "./App.module.scss";
 import { Task } from "./components/Task";
 const tasks = [
-  { isDone: true, task: "limpar o Quarto" },
-  { isDone: false, task: "limpar a casa" },
-  { isDone: true, task: "fazer o café" },
-  { isDone: false, task: "regar as plantas" },
-  { isDone: false, task: "consertar o telhado" },
+  { id: 1, isDone: true, task: "limpar o Quarto" },
+  { id: 2, isDone: false, task: "limpar a casa" },
+  { id: 3, isDone: true, task: "fazer o café" },
+  { id: 4, isDone: false, task: "regar as plantas" },
+  { id: 5, isDone: false, task: "consertar o telhado" },
 ];
 export function App() {
   return (
@@ -24,7 +24,7 @@ export function App() {
       </div>
       <ul className={styles.taskList}>
         {tasks.map((task) => {
-          return <Task isDone={task.isDone} task={task} />;
+          return <Task key={task.id} isDone={task.isDone} taskText={task.task} />;
         })}
       </ul>
     </article>
