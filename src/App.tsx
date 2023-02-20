@@ -23,7 +23,9 @@ export function App() {
         </div>
       </div>
       <ul className={styles.taskList}>
-        <Task />
+        {tasks.map((task) => {
+          return <Task isDone={task.isDone} task={task} />;
+        })}
       </ul>
     </article>
   );
