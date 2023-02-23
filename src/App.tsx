@@ -2,6 +2,7 @@ import { Header } from "./components/Header";
 import styles from "./App.module.scss";
 import { Task } from "./components/Task";
 import { v4 as uuidV4 } from "uuid";
+import { useState } from "react";
 const tasks = [
   { id: uuidV4(), isDone: true, task: "limpar o Quarto" },
   { id: uuidV4(), isDone: false, task: "limpar a casa" },
@@ -10,6 +11,7 @@ const tasks = [
   { id: uuidV4(), isDone: false, task: "consertar o telhado" },
 ];
 export function App() {
+  const [tasksList, setTasksList] = useState();
   return (
     <article className={styles.mainPage}>
       <Header />
