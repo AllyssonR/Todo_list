@@ -13,11 +13,12 @@
     margin-top: 1rem;
   }
   button {
+    box-sizing: initial;
     background: none;
     border: none;
     color: var(--gray-100);
     cursor: pointer;
-    padding: 0.2rem;
+    padding: 0 0.2rem;
     &:hover {
       color: var(--danger);
       background: var(--gray-600);

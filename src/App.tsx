@@ -19,7 +19,7 @@ export function App() {
             Tarefas criadas <span>{tasks.length}</span>
           </h1>
           <h1 className={styles.completedTask}>
-            Concluídas <span>0</span>
+            Concluídas <span>0 de {tasks.length}</span>
           </h1>
         </div>
       </div>
