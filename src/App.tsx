@@ -35,3 +35,12 @@ export function App() {
     </article>
   );
 }
+
+/*
+i've created this Task for test style reaction to bigger texts
+     <Task
+          key={5}
+          isDone={true}
+          taskText="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy"
+        />
+*/

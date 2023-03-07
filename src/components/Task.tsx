@@ -7,9 +7,11 @@ interface TaskProps {
 export function Task({ isDone, taskText }: TaskProps) {
   return (
     <li className={styles.content}>
-      <input type="checkbox" name="isTashDone" id="isTaskDone" />
-      <h1>{isDone}</h1>
-      <p>{taskText}</p>
+      <div className={styles.textAndCheckbox}>
+        <input type="checkbox" name="isTaskDone" id="isTaskDone" />
+        <h1>{isDone}</h1>
+        <p>{taskText}</p>
+      </div>
       <button>
         <Trash size={12} />
       </button>
