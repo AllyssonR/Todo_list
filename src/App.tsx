@@ -2,6 +2,17 @@ import { Header } from "./components/Header";
 import styles from "./App.module.scss";
 import { Task } from "./components/Task";
 import { v4 as uuidV4 } from "uuid";
+import { FormEvent, useState } from "react";
+interface TaskProps {
+  id: string;
+  isDone: boolean;
+  task: string;
+}
+interface TaskListProps {
+  Tasks: TaskProps[];
+}
+
+/*
 const tasks = [
   { id: uuidV4(), isDone: true, task: "limpar o Quarto" },
   { id: uuidV4(), isDone: false, task: "limpar a casa" },
@@ -9,7 +20,15 @@ const tasks = [
   { id: uuidV4(), isDone: false, task: "regar as plantas" },
   { id: uuidV4(), isDone: false, task: "consertar o telhado" },
 ];
+*/
+
 export function App() {
+  const [tasks, setTasks] = useState<TaskProps[]>();
+  const [newTask, setNewTasks] = useState();
+  function handleNewTask(event: FormEvent) {
+    event.preventDefault();
+    setTasks([...tasks, newTask]);
+  }
   return (
     <article className={styles.mainPage}>
       <Header />
