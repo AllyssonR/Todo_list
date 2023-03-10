@@ -2,10 +2,6 @@ import { Header } from "./components/Header";
 import styles from "./App.module.scss";
 import { Task } from "./components/Task";
 import { v4 as uuidV4 } from "uuid";
-<<<<<<< HEAD
-import { useState } from "react";
-import { NoTask } from "./components/NoTask";
-=======
 import { FormEvent, useState } from "react";
 interface TaskProps {
   id: string;
@@ -17,7 +13,6 @@ interface TaskListProps {
 }
 
 /*
->>>>>>> 0fdc246112ba39514ef3bc74bd61075d35141453
 const tasks = [
   { id: uuidV4(), isDone: true, task: "limpar o Quarto" },
   { id: uuidV4(), isDone: false, task: "limpar a casa" },
