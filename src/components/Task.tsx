@@ -9,7 +9,6 @@ export function Task({ isDone, taskText }: TaskProps) {
     <li className={styles.content}>
       <div className={styles.textAndCheckbox}>
         <input type="checkbox" name="isTaskDone" id="isTaskDone" />
-        <h1>{isDone}</h1>
         <p>{taskText}</p>
       </div>
       <button>

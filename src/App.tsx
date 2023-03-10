@@ -3,6 +3,7 @@ import styles from "./App.module.scss";
 import { Task } from "./components/Task";
 import { v4 as uuidV4 } from "uuid";
 import { useState } from "react";
+import { NoTask } from "./components/NoTask";
 const tasks = [
   { id: uuidV4(), isDone: true, task: "limpar o Quarto" },
   { id: uuidV4(), isDone: false, task: "limpar a casa" },
@@ -25,13 +26,17 @@ export function App() {
           </h1>
         </div>
       </div>
-      <ul className={styles.taskList}>
-        {tasks.map((task) => {
-          return (
-            <Task key={task.id} isDone={task.isDone} taskText={task.task} />
-          );
-        })}
-      </ul>
+      {tasks.length > 0 ? (
+        <ul className={styles.taskList}>
+          {tasks.map((task) => {
+            return (
+              <Task key={task.id} isDone={task.isDone} taskText={task.task} />
+            );
+          })}
+        </ul>
+      ) : (
+        <NoTask />
+      )}
     </article>
   );
 }
