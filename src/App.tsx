@@ -9,9 +9,7 @@ interface TaskProps {
   isDone: boolean;
   task: string;
 }
-interface TaskListProps {
-  Tasks: TaskProps[];
-}
+
 
 const tasks = [
   { id: uuidV4(), isDone: true, task: "limpar o Quarto" },
