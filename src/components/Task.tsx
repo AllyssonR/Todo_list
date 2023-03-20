@@ -6,9 +6,10 @@ interface TaskProps {
   taskText: string;
 }
 export function Task({ isDone, taskText }: TaskProps) {
-  const [checked, setChecked] = useState(isDone);
+  const [checkedTask, setCheckedTask] = useState(isDone);
+
   function onCheckedChange() {
-    setChecked(!checked);
+    setCheckedTask(!checkedTask);
   }
   return (
     <li className={styles.content}>
@@ -17,10 +18,11 @@ export function Task({ isDone, taskText }: TaskProps) {
           type="checkbox"
           name="isTaskDone"
           id="isTaskDone"
-          onClick={onCheckedChange}
+          checked={checkedTask}
+          onChange={onCheckedChange}
         />
 
-        {checked ? <p>{taskText}</p> : <s>{taskText}</s>}
+        {checkedTask ? <s>{taskText}</s> : <p>{taskText}</p>}
       </div>
       <button>
         <Trash size={12} />

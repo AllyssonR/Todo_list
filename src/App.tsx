@@ -10,7 +10,6 @@ interface TaskProps {
   task: string;
 }
 
-
 const tasks = [
   { id: uuidV4(), isDone: true, task: "limpar o Quarto" },
   { id: uuidV4(), isDone: false, task: "limpar a casa" },
