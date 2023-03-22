@@ -3,7 +3,8 @@ import { NoTask } from "./components/NoTask";
 import styles from "./App.module.scss";
 import { Task } from "./components/Task";
 import { v4 as uuidV4 } from "uuid";
-import { FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
+
 export interface TaskProps {
   id: string;
   isDone: boolean;
@@ -22,12 +23,23 @@ const tasks = [
 
 export function App() {
   const [tasks, setTasks] = useState<TaskProps[]>([]);
+  const [newTask, setNewTask] = useState<TaskProps>({
+    id: uuidV4(),
+    isDone: false,
+    task: "",
+  });
   function handleNewTask(event: FormEvent) {
     event.preventDefault();
+    setTasks([...tasks, newTask]);
   }
+  function handleNewTaskChange(event: ChangeEvent<InputEvent>) {
+    event.preventDefault();
+    setNewTask(event.target.data);
+  }
+
   return (
     <article className={styles.mainPage}>
-      <Header setTasks={setTasks} />
+      <Header />
       <div className={styles.tableTask}>
         <div className={styles.headerTable}>
           <h1 className={styles.createdTask}>
@@ -42,7 +54,7 @@ export function App() {
         <ul className={styles.taskList}>
           {tasks.map((task) => {
             return (
-              <Task key={task.id} isDone={task.isDone} taskText={task.text} />
+              <Task key={task.id} isDone={task.isDone} taskText={task.task} />
             );
           })}
         </ul>
