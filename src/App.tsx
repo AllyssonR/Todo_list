@@ -11,11 +11,11 @@ interface TaskProps {
 }
 
 const tasks = [
-  { id: uuidV4(), isDone: true, task: "limpar o Quarto" },
-  { id: uuidV4(), isDone: false, task: "limpar a casa" },
-  { id: uuidV4(), isDone: true, task: "fazer o café" },
-  { id: uuidV4(), isDone: false, task: "regar as plantas" },
-  { id: uuidV4(), isDone: false, task: "consertar o telhado" },
+  { id: uuidV4(), isDone: true, text: "limpar o Quarto" },
+  { id: uuidV4(), isDone: false, text: "limpar a casa" },
+  { id: uuidV4(), isDone: true, text: "fazer o café" },
+  { id: uuidV4(), isDone: false, text: "regar as plantas" },
+  { id: uuidV4(), isDone: false, text: "consertar o telhado" },
 ];
 
 export function App() {
@@ -39,7 +39,7 @@ export function App() {
         <ul className={styles.taskList}>
           {tasks.map((task) => {
             return (
-              <Task key={task.id} isDone={task.isDone} taskText={task.task} />
+              <Task key={task.id} isDone={task.isDone} taskText={task.text} />
             );
           })}
         </ul>
