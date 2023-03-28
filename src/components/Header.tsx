@@ -1,8 +1,14 @@
 import imgTodoList from "../../assets/rocket.svg";
 import styles from "./Header.module.scss";
 import { AddTask } from "./AddTask";
-
-export function Header() {
+import { TaskProps } from "../App";
+export interface Headerprops {
+  setTasks: React.Dispatch<React.SetStateAction<TaskProps[]>>;
+  newTask: TaskProps;
+  setNewTask: React.Dispatch<React.SetStateAction<TaskProps>>;
+  tasks: TaskProps[];
+}
+export function Header({ newTask, setNewTask, setTasks, tasks }: Headerprops) {
   return (
     <>
       <header className={styles.headerLogo}>
@@ -11,7 +17,12 @@ export function Header() {
           to<span>do</span>
         </h1>
       </header>
-      <AddTask/>
+      <AddTask
+        newTask={newTask}
+        setNewTask={setNewTask}
+        setTasks={setTasks}
+        tasks={tasks}
+      />
     </>
   );
 }
