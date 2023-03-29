@@ -27,7 +27,6 @@ export function App() {
     isDone: false,
     task: "",
   });
-  console.log(tasks, newTask);
   return (
     <article className={styles.mainPage}>
       <Header

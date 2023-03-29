@@ -12,10 +12,11 @@ export function AddTask({ newTask, setNewTask, setTasks, tasks }: Headerprops) {
       task: event.target.value,
     };
     setNewTask(addTask);
+
   }
   function handleNewTask(event: FormEvent) {
     event.preventDefault();
-    setTasks([...tasks], newTask);
+    setTasks([...tasks, newTask]);
   }
   return (
     <form className={styles.addTesk} onSubmit={handleNewTask}>
