@@ -2,7 +2,7 @@ import { Header } from "./components/Header";
 import { NoTask } from "./components/NoTask";
 import styles from "./App.module.scss";
 import { Task } from "./components/Task";
-import {useState } from "react";
+import { useState } from "react";
 
 export interface TaskProps {
   id?: string;
@@ -27,6 +27,16 @@ export function App() {
     isDone: false,
     task: "",
   });
+  function deleteTask(id: string) {
+    const tasksWithoutDeletedOne = tasks.filter((task) => {
+      return task.id !== id;
+    });
+    setTasks(tasksWithoutDeletedOne);
+  }
+  const concluidTasksCount = tasks.filter((task) => {
+    return task.isDone == true;
+  });
+  console.log(tasks)
   return (
     <article className={styles.mainPage}>
       <Header
@@ -41,7 +51,10 @@ export function App() {
             Tarefas criadas <span>{tasks.length}</span>
           </h1>
           <h1 className={styles.completedTask}>
-            Concluídas <span>0 de {tasks.length}</span>
+            Concluídas{" "}
+            <span>
+              {concluidTasksCount.length} de {tasks.length}
+            </span>
           </h1>
         </div>
       </div>
@@ -49,7 +62,13 @@ export function App() {
         <ul className={styles.taskList}>
           {tasks.map((task) => {
             return (
-              <Task key={task.id} isDone={task.isDone} taskText={task.task} />
+              <Task
+                key={task.id}
+                id={task.id}
+                isDone={task.isDone}
+                taskText={task.task}
+                onDeleteTask={deleteTask}
+              />
             );
           })}
         </ul>
