@@ -5,7 +5,7 @@ import { Task } from "./components/Task";
 import { useState } from "react";
 
 export interface TaskProps {
-  id?: string;
+  id?: string & any;
   isDone: boolean;
   task: string;
 }
